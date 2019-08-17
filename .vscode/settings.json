@@ -1,0 +1,9 @@
+{
+  "terminal.integrated.env.linux": {
+    "PATH": "${env:PATH}:${workspaceRoot}/node_modules/.bin"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.formatOnSave": true
+}
