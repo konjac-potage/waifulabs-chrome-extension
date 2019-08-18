@@ -1,0 +1,40 @@
+/* adjust margins */
+.App {
+  width: unset;
+}
+.steps {
+  margin: 35px 0 25px;
+}
+.container {
+  margin-bottom: 4ex;
+  padding: 0 2em;
+}
+
+/* slide down buttons */
+$offset: 195px;
+.sizigi {
+  bottom: 20px - $offset;
+}
+.go-back-button {
+  bottom: 25px - $offset;
+}
+.refresh-button {
+  bottom: 20px - $offset;
+}
+.restart-button-floating {
+  bottom: 140px - $offset;
+}
+.undo-button {
+  bottom: 80px - $offset;
+}
+.App {
+  margin-bottom: 190px;
+}
+@media screen and (max-width: 750px) {
+  .App {
+    margin-bottom: 0;
+  }
+  .sizigi {
+    left: 20px;
+  }
+}

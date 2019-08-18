@@ -22,8 +22,12 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        loaders: ['style-loader', 'css-loader?modules'],
+        test: /\.scss$/,
+        loaders: [
+          { loader: 'style-loader', options: { injectType: 'styleTag' } },
+          'css-loader',
+          'sass-loader',
+        ],
       },
     ],
   },

@@ -7,6 +7,8 @@ import * as seek_step from './seek-step';
 import * as quick_dl from './quick-dl';
 import * as swap_girl from './swap-girl';
 
+import './fix-ui.scss';
+
 /* Apply patches when DOM subtree is modified */
 const observer = new MutationObserver(() => {
   const app = new App();
