@@ -1,3 +1,7 @@
+/**
+ * @file load waifu on drop downloaded file.
+ */
+
 import './load-on-drop.scss';
 import App from './modules/app';
 import { Gene } from './modules/utils';
