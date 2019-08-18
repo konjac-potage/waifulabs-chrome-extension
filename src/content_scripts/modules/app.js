@@ -42,15 +42,18 @@ export default class App {
 
   async loadWaifu(seeds) {
     const step = this.getStep();
+    const waifu = {
+      image: await generate_big(seeds),
+      seeds,
+    };
     if (1 <= step && step <= 4) {
-      const waifu = {
-        image: await generate_big(seeds),
-        seeds,
-      };
       this.getState().girl = waifu;
       document.querySelector(
         '.my-girl-image',
       ).src = `data:image/png;charset=utf-8;base64,${waifu.image}`;
+    } else {
+      localStorage.waifu = JSON.stringify(waifu);
+      window.location = location;
     }
   }
 }

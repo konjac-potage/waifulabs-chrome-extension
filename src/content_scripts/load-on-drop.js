@@ -32,10 +32,7 @@ export function applyPatch() {
     if (in_drop_area == 1) {
       e.target.style.color = '#1890ff';
     } else if (in_drop_area < 0) {
-      const step = new App().getStep();
-      if (1 <= step && step <= 4) {
-        drop_area.style.display = ''; // show drop_area
-      }
+      drop_area.style.display = ''; // show drop_area
     }
   };
 
@@ -58,9 +55,15 @@ export function applyPatch() {
 
       if (e.dataTransfer.files.length > 0) {
         const app = new App();
+        const step = app.getStep();
+
         const target = e.target.attributes['data-target'].value;
 
-        const seeds = app.getState().girl.seeds;
+        const seeds =
+          1 <= step && step <= 4
+            ? app.getState().girl.seeds
+            : Array(16).fill(0);
+
         const gene = Gene.fromSeeds(seeds);
         const newGene = Gene.fromString(e.dataTransfer.files[0].name);
 
