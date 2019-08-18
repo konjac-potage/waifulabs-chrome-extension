@@ -1,0 +1,21 @@
+.drop-area {
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: #000b;
+  padding: 2vh 0;
+}
+
+.drop-area > div {
+  color: #eee;
+  font-size: 5ex;
+  margin: 2vh 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border-style: dashed;
+}

@@ -19,3 +19,21 @@ export async function generate_big(seeds) {
 
   return (await res.json()).girl;
 }
+
+/**
+ * fetch big image
+ * @param {(number|number[])[]} seeds
+ * @return {Promise<string>} base64-encoded string content of image/png
+ */
+export async function generate(seeds) {
+  const res = await fetch('https://api.waifulabs.com/generate_big', {
+    body: JSON.stringify({
+      currentGirl: seeds,
+      size: 512,
+      step: 4,
+    }),
+    method: 'POST',
+  });
+
+  return (await res.json()).girl;
+}

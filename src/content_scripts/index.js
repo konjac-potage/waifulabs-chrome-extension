@@ -7,6 +7,7 @@ import * as seek_step from './seek-step';
 import * as quick_dl from './quick-dl';
 import * as swap_girl from './swap-girl';
 import * as prevent_murder from './prevent-murder';
+import * as load_on_drop from './load-on-drop';
 
 import './fix-ui.scss';
 
@@ -27,3 +28,4 @@ observer.observe(document.getElementById('root'), {
 
 /* Apply patches immediately */
 prevent_murder.applyPatch();
+load_on_drop.applyPatch();

@@ -34,7 +34,62 @@ export function downloadFile(fileName, url) {
 
 export function downloadWaifu(seeds, image) {
   downloadFile(
-    `c${seeds[12]}-d${seeds[4]}-p${seeds[0]}.png`,
+    `${Gene.fromSeeds(seeds).toString()}.png`,
     `data:image/png;charset=utf-8;base64,${image}`,
   );
+}
+
+export class Gene {
+  /**
+   * @param {number|undefined} color
+   * @param {number|undefined} details
+   * @param {number|undefined} pose
+   */
+  constructor(color, details, pose) {
+    if (color >= 0) this.color = color;
+    if (details >= 0) this.details = details;
+    if (pose >= 0) this.pose = pose;
+  }
+
+  static fromObject(gene) {
+    const { color, details, pose } = gene;
+    return new Gene(color, details, pose);
+  }
+
+  static fromSeeds(seeds) {
+    return new Gene(seeds[12], seeds[4], seeds[0]);
+  }
+
+  static fromString(str) {
+    const color = str.match(/c(\d+)/);
+    const details = str.match(/d(\d+)/);
+    const pose = str.match(/p(\d+)/);
+
+    const gene = {};
+    if (color) gene.color = +color[1];
+    if (details) gene.details = +details[1];
+    if (pose) gene.pose = +pose[1];
+
+    return this.fromObject(gene);
+  }
+
+  toSeeds(s16 = 0, s17 = [0, 0, 0]) {
+    const { color, details, pose } = this;
+    return [
+      ...Array(4).fill(pose || 0),
+      ...Array(8).fill(details || 0),
+      ...Array(4).fill(color || 0),
+      s16,
+      s17,
+    ];
+  }
+
+  toString() {
+    const { color, details, pose } = this;
+    return [
+      color ? `c${color}` : '',
+      details ? `d${details}` : '',
+      pose ? `p${pose}` : '',
+    ].join('-');
+  }
 }

@@ -3,6 +3,7 @@
  */
 
 import { getReactInstance } from './utils';
+import { generate_big } from './api';
 
 /**
  * Provide method to access original application
@@ -36,6 +37,20 @@ export default class App {
     if (state && button) {
       state.step = step - 1;
       button.click();
+    }
+  }
+
+  async loadWaifu(seeds) {
+    const step = this.getStep();
+    if (1 <= step && step <= 4) {
+      const waifu = {
+        image: await generate_big(seeds),
+        seeds,
+      };
+      this.getState().girl = waifu;
+      document.querySelector(
+        '.my-girl-image',
+      ).src = `data:image/png;charset=utf-8;base64,${waifu.image}`;
     }
   }
 }
