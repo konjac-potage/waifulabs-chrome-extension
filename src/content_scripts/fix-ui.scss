@@ -1,7 +1,4 @@
 /* adjust margins */
-.App {
-  width: unset;
-}
 .steps {
   margin: 35px 0 25px;
 }
@@ -10,31 +7,17 @@
   padding: 0 2em;
 }
 
-/* slide down buttons */
-$offset: 195px;
-.sizigi {
-  bottom: 20px - $offset;
-}
-.go-back-button {
-  bottom: 25px - $offset;
-}
-.refresh-button {
-  bottom: 20px - $offset;
-}
-.restart-button-floating {
-  bottom: 140px - $offset;
-}
-.undo-button {
-  bottom: 80px - $offset;
-}
+/* move buttons */
 .App {
-  margin-bottom: 190px;
-}
-@media screen and (max-width: 750px) {
-  .App {
-    margin-bottom: 0;
+  width: unset;
+  flex-flow: wrap;
+
+  > .column {
+    width: 100%;
   }
-  .sizigi {
-    left: 20px;
+
+  > button {
+    position: initial;
+    margin: 1ex 1ex 3ex;
   }
 }
