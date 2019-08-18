@@ -2,7 +2,7 @@
  * @file content script entry point
  */
 
-import App from './app';
+import App from './modules/app';
 import * as seek_step from './seek-step';
 import * as quick_dl from './quick-dl';
 

@@ -2,7 +2,7 @@
  * @file step seeking feature
  */
 
-import App from './app';
+import App from './modules/app';
 
 /**
  * @param {App} app

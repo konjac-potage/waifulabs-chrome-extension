@@ -2,9 +2,9 @@
  * @file quick download feature
  */
 
-import App from './app';
-import { downloadWaifu } from './utils';
-import { generate_big } from './api';
+import App from './modules/app';
+import { downloadWaifu } from './modules/utils';
+import { generate_big } from './modules/api';
 
 /**
  * @param {HTMLElement} element
