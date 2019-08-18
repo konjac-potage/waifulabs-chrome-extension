@@ -6,6 +6,7 @@ import App from './modules/app';
 import * as seek_step from './seek-step';
 import * as quick_dl from './quick-dl';
 import * as swap_girl from './swap-girl';
+import * as prevent_murder from './prevent-murder';
 
 import './fix-ui.scss';
 
@@ -23,3 +24,6 @@ observer.observe(document.getElementById('root'), {
   childList: true,
   subtree: true,
 });
+
+/* Apply patches immediately */
+prevent_murder.applyPatch();
