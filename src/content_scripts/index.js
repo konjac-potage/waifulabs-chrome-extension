@@ -18,6 +18,7 @@ const observer = new MutationObserver(() => {
   seek_step.applyPatch(app);
   quick_dl.applyPatch(app);
   swap_girl.applyPatch(app);
+  prevent_murder.applyPatch(app);
 });
 
 observer.observe(document.getElementById('root'), {
@@ -27,5 +28,4 @@ observer.observe(document.getElementById('root'), {
 });
 
 /* Apply patches immediately */
-prevent_murder.applyPatch();
 load_on_drop.applyPatch();
