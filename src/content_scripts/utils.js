@@ -23,11 +23,18 @@ export function getReactInstance(dom) {
 
 /**
  * @param {string} fileName
- * @param {string} href
+ * @param {string} url
  */
-export function downloadToFile(fileName, href) {
+export function downloadFile(fileName, url) {
   const a = document.createElement('a');
   a.download = fileName;
-  a.href = href;
+  a.href = url;
   a.click();
+}
+
+export function downloadWaifu(seeds, image) {
+  downloadFile(
+    `c${seeds[12]}-d${seeds[4]}-p${seeds[0]}.png`,
+    `data:image/png;charset=utf-8;base64,${image}`,
+  );
 }
