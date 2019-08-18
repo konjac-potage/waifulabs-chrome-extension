@@ -25,7 +25,7 @@
     "webpack-cli": "^3.3.6"
   },
   "scripts": {
-    "build": "rm -rf dist/* && webpack -p",
+    "build": "rm -rf dist/* && webpack -p && cd dist && zip -9r waifu.zip .",
     "start": "webpack --watch"
   },
   "husky": {
