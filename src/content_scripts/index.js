@@ -5,6 +5,7 @@
 import App from './modules/app';
 import * as seek_step from './seek-step';
 import * as quick_dl from './quick-dl';
+import * as swap_girl from './swap-girl';
 
 /* Apply patches when DOM subtree is modified */
 const observer = new MutationObserver(() => {
@@ -12,6 +13,7 @@ const observer = new MutationObserver(() => {
 
   seek_step.applyPatch(app);
   quick_dl.applyPatch(app);
+  swap_girl.applyPatch(app);
 });
 
 observer.observe(document.getElementById('root'), {
