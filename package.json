@@ -12,17 +12,17 @@
     "babel-loader": "^8.0.6",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.2.2",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.4",
-    "lint-staged": "^9.2.2",
+    "lint-staged": "^9.2.5",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
-    "sass-loader": "^7.2.0",
+    "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   },
   "scripts": {
     "build": "rm -rf dist/* && webpack -p && cd dist && zip -9r waifu.zip .",
