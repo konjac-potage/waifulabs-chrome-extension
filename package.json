@@ -22,7 +22,7 @@
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "build": "rm -rf dist/* && webpack -p && cd dist && zip -9r waifu.zip .",
